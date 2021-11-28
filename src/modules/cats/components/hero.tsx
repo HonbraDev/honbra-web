@@ -21,10 +21,10 @@ export const Hero = ({
 }) => {
   const theme = useTheme();
 
-  const [currentImage, setCurrentImage] = useState("/api/random");
+  const [currentImage, setCurrentImage] = useState("/api/cats/random");
 
   const setRandomImage = () => {
-    axios.get('/api/random/url').then(res => setCurrentImage(res.data.data.url));
+    axios.get('/api/cats/random/url').then(res => setCurrentImage(res.data.data.url));
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

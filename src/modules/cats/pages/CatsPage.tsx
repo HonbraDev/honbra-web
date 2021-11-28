@@ -1,8 +1,8 @@
 import { Layout, Section } from "../../../components/layout";
-import { Hero } from "../../../components/cat/hero";
-import { AllImages } from "../../../components/cat/allimages";
 
 import type { NextPage, GetStaticProps } from "next";
+import { Hero } from "../components/hero";
+import { AllImages } from "../components/allimages";
 
 export const CatsApiPage: NextPage<Props> = ({ imagePaths }) => {
   return (
@@ -12,7 +12,7 @@ export const CatsApiPage: NextPage<Props> = ({ imagePaths }) => {
           <Hero endpoint="honbra.com/api/cat/random" imagePaths={imagePaths} />
         </Section>
         <Section title="Images">
-          <AllImages paths={imagePaths} />
+          <AllImages />
         </Section>
       </Layout>
     </>
