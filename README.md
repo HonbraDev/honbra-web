@@ -16,4 +16,4 @@ My personal website with React.js shitposts
 
 ---
 
-Thank you for comping to my Ted talk.
+Thank you for coming to my Ted talk.
