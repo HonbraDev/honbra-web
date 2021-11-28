@@ -1,5 +1,4 @@
-import { Link } from "../link";
-import copy from "copy-to-clipboard";
+import Link from "next/link";
 
 import {
   Box,
@@ -10,8 +9,8 @@ import {
   TextField,
   useTheme,
 } from "@mui/material";
-import { useEffect, useState } from "react";
-import { arrayRandom } from "../../src/utils";
+import { useState } from "react";
+import axios from "axios";
 
 export const Hero = ({
   imagePaths,
@@ -22,13 +21,13 @@ export const Hero = ({
 }) => {
   const theme = useTheme();
 
-  const [currentImage, setCurrentImage] = useState(arrayRandom(imagePaths));
+  const [currentImage, setCurrentImage] = useState("/api/random");
 
-  const setRandomImage = () => setCurrentImage(arrayRandom(imagePaths));
+  const setRandomImage = () => {
+    axios.get('/api/random/url').then(res => setCurrentImage(res.data.data.url));
+  };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => setRandomImage(), []);
-
   return (
     <Grid container spacing={3}>
       <Grid item sm={6} xs={0}>
@@ -41,16 +40,18 @@ export const Hero = ({
             overflow: "hidden",
           }}
         >
-          <Link href={currentImage} target="_blank" rel="noreferrer">
-            <Box
-              sx={{
-                position: "absolute",
-                inset: 0,
-                height: "100%",
-                width: "100%",
-                background: `url(${currentImage}) center center/cover`,
-              }}
-            />
+          <Link href={currentImage}>
+            <a href={currentImage} target="_blank" rel="noreferrer">
+              <Box
+                sx={{
+                  position: "absolute",
+                  inset: 0,
+                  height: "100%",
+                  width: "100%",
+                  background: `url(${currentImage}) center center/cover`,
+                }}
+              />
+            </a>
           </Link>
           <Box
             sx={{
