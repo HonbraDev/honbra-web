@@ -8,17 +8,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@duxcore/manifestation": "^1.2.3",
     "@emotion/react": "^11.7.0",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.1",
+    "axios": "^0.24.0",
     "copy-to-clipboard": "^3.3.1",
     "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "16.11.10",
     "@types/react": "17.0.37",
     "eslint": "7",

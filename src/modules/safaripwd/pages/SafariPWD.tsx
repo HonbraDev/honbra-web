@@ -1,11 +1,11 @@
 import copy from "copy-to-clipboard";
 
-import { Layout, Section } from "../../components/layout";
+import { Layout, Section } from "../../../components/layout";
 import { Card, Button, TextField, ButtonGroup } from "@mui/material";
-import { generatePassword } from "../../src/safaripwd/generatePassword";
 import { useState } from "react";
 
 import type { NextPage } from "next";
+import { generatePassword } from "../generatePassword";
 
 const SafariPWD: NextPage<Props> = () => {
   const [password, setPassword] = useState(generatePassword());

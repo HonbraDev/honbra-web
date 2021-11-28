@@ -4,7 +4,7 @@ export function generatePassword() {
   ];
 
   const uppercaseLocation = Math.floor(
-    Math.random() * possibleLocations.length
+    Math.random() * possibleLocations.length,
   );
   possibleLocations.slice(uppercaseLocation, 1);
 
