@@ -1,6 +1,6 @@
-# cat-api
+# honbra-web
 
-A simple API and website for pictures of my cat
+My personal website with React.js shitposts
 
 ## Installation
 
