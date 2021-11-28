@@ -9,7 +9,7 @@ export const CatsApiPage: NextPage<Props> = ({ imagePaths }) => {
     <>
       <Layout title="Cat API">
         <Section>
-          <Hero endpoint="honbra.com/api/cat/random" imagePaths={imagePaths} />
+          <Hero endpoint="honbra.com/api/cats/random" imagePaths={imagePaths} />
         </Section>
         <Section title="Images">
           <AllImages />
