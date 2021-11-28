@@ -18,7 +18,7 @@ export default async function handler(
         status: 200,
         message: "Successfully Fetched Image!",
         data: {
-          url: `//${req.headers.host}${imagePath}`,
+          url: `https://${req.headers.host}${imagePath}`,
         },
       }),
     );

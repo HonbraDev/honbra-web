@@ -1,5 +1,5 @@
-import { Link } from "../components/link";
-import { Layout, Section } from "../components/layout";
+import { Link } from "../components/Link";
+import { Layout, Section } from "../components/Layout";
 import { Card, Box, Grid, Typography, Button } from "@mui/material";
 
 import type { NextPage, GetServerSideProps } from "next";

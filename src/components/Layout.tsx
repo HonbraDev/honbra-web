@@ -4,7 +4,7 @@ import { Container, Typography, useTheme, Breadcrumbs } from "@mui/material";
 import { GitHub } from "@mui/icons-material";
 import { Box } from "@mui/system";
 import { useRouter } from "next/router";
-import { Link } from "./link";
+import { Link } from "./Link";
 
 export const RouteBreadcrumb = ({
   title,
@@ -53,16 +53,15 @@ export const Layout = ({
         maxWidth="md"
       >
         <Box>
+          {router.route !== "/" && (
+            <Breadcrumbs>
+              <RouteBreadcrumb title="Honbra" link="/" />
+              <Box />
+            </Breadcrumbs>
+          )}
           <Typography variant="h3" component="h1">
             {title}
           </Typography>
-          {/* TO-DO: Implement proper breadcrumbs */}
-          {router.route !== "/" && (
-            <Breadcrumbs aria-label="breadcrumb">
-              <RouteBreadcrumb title="Honbra" link="/" />
-              <RouteBreadcrumb title={title} link={router.route} />
-            </Breadcrumbs>
-          )}
         </Box>
         {children}
         <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>

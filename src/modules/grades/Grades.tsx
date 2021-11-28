@@ -1,4 +1,4 @@
-import { Layout, Section } from "../../components/layout";
+import { Layout, Section } from "../../components/Layout";
 import { Card, Slider, Typography, Grid } from "@mui/material";
 import { useState } from "react";
 
@@ -31,6 +31,7 @@ const Grades: NextPage<Props> = () => {
               mx: "auto",
             }}
           >
+            <Typography variant="h4">Kalkulačka známek</Typography>
             <Grid container spacing={2}>
               <Grid
                 item

@@ -1,8 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { manifestation } from "@duxcore/manifestation";
 import { getImageNames } from "../../../serverUtils";
-import { arrayRandom, getImagePath } from "../../../modules/cats/catUtils";
-import { read } from "fs";
+import { getImagePath } from "../../../modules/cats/catUtils";
 
 export default async function handler(
   req: NextApiRequest,
@@ -20,7 +19,7 @@ export default async function handler(
           imageNames.map((name) => ({
             name: name.split(".")[0],
             type: "image/webp",
-            url: `//${req.headers.host}${getImagePath(name)}`,
+            url: `https://${req.headers.host}${getImagePath(name)}`,
           })),
         ],
       }),

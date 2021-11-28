@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Layout, Section } from "../components/layout";
+import { Layout, Section } from "../components/Layout";
 import { Card, Box, Grid, Typography, Button } from "@mui/material";
 
 import type { NextPage, GetStaticProps } from "next";

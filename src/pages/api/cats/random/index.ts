@@ -1,8 +1,9 @@
+import fs from "fs";
+
 import { arrayRandom, getFsImagePath } from "../../../../modules/cats/catUtils";
+import { getImageNames } from "../../../../serverUtils";
 
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getImageNames } from "../../../../serverUtils";
-import fs from "fs";
 
 export default async function handler(
   req: NextApiRequest,
