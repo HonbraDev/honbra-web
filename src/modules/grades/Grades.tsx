@@ -70,4 +70,4 @@ const Grades: NextPage<Props> = () => {
 
 export default Grades;
 
-export interface Props { }
+export interface Props {}

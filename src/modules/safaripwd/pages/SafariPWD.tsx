@@ -43,4 +43,4 @@ const SafariPWD: NextPage<Props> = () => {
 
 export default SafariPWD;
 
-export interface Props { }
+export interface Props {}

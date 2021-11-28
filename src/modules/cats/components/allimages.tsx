@@ -5,23 +5,18 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ImageBlock from "../../../types/ImageBlock";
 
-export const AllImages = ({
-  showAll = false,
-}: {
-  showAll?: boolean;
-}) => {
+export const AllImages = ({ showAll = false }: { showAll?: boolean }) => {
   const [showAllImages, setShowAllImages] = useState(showAll);
   const [images, setImageIndex] = useState<ImageBlock[]>([]);
 
   useEffect(() => {
-    axios.get("/api/cats/all").then(res => {
+    axios.get("/api/cats/all").then((res) => {
       console.log(res.data.data);
 
       //@ts-ignore
-      setImageIndex(...res.data.data)
-
-    })
-  }, [])
+      setImageIndex(...res.data.data);
+    });
+  }, []);
 
   return (
     <Grid container spacing={2}>
@@ -44,7 +39,7 @@ export const AllImages = ({
                 </a>
               </Link>
             </Grid>
-          )
+          );
         })}
       {!showAllImages && (
         <Grid item xs={12}>

@@ -1,6 +1,6 @@
 /**
  * Simple Random String Generator
- * 
+ *
  * @author Jackson Roberts <jackson@holopanio.com>
  * @param length - The length of the random string
  * @returns A random string
@@ -14,5 +14,5 @@ export default function randStr(length: number): string {
     result.push(chars.charAt(Math.floor(Math.random() * charsLength)));
   }
 
-  return result.join('');
+  return result.join("");
 }

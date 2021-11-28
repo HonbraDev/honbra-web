@@ -26,7 +26,7 @@ export default function MyApp(props: MyAppProps) {
           mode: prefersDarkMode ? "dark" : "light",
         },
       }),
-    [prefersDarkMode]
+    [prefersDarkMode],
   );
 
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;

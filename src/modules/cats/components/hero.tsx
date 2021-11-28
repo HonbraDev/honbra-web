@@ -24,7 +24,9 @@ export const Hero = ({
   const [currentImage, setCurrentImage] = useState("/api/cats/random");
 
   const setRandomImage = () => {
-    axios.get('/api/cats/random/url').then(res => setCurrentImage(res.data.data.url));
+    axios
+      .get("/api/cats/random/url")
+      .then((res) => setCurrentImage(res.data.data.url));
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
