@@ -1,10 +1,36 @@
 import Head from "next/head";
+import socials from "../data/socials";
 
-import { Container, Typography, useTheme, Breadcrumbs } from "@mui/material";
-import { GitHub } from "@mui/icons-material";
+import {
+  Container,
+  Typography,
+  Breadcrumbs,
+  Tooltip,
+  useTheme,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import { useRouter } from "next/router";
 import { Link } from "./Link";
+
+export const Footer = () => {
+  const theme = useTheme();
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", mt: 6, gap: 4 }}>
+      {socials.map(({ icon: Icon, href, tooltip }) => (
+        <Link key={href} href={href} target="_blank" rel="noreferrer">
+          <Tooltip title={tooltip || ""} placement="top">
+            <Icon
+              sx={{
+                color: theme.palette.text.secondary,
+                fontSize: "2rem",
+              }}
+            />
+          </Tooltip>
+        </Link>
+      ))}
+    </Box>
+  );
+};
 
 export const RouteBreadcrumb = ({
   title,
@@ -32,7 +58,6 @@ export const Layout = ({
   title: string;
   disableFlex?: boolean;
 }) => {
-  const theme = useTheme();
   const router = useRouter();
   return (
     <>
@@ -64,22 +89,7 @@ export const Layout = ({
           </Typography>
         </Box>
         {children}
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
-          <Link href="https://github.com/HonbraDev/honbra-web">
-            <a
-              href="https://github.com/HonbraDev/honbra-web"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GitHub
-                sx={{
-                  color: theme.palette.text.secondary,
-                  fontSize: "2rem",
-                }}
-              />
-            </a>
-          </Link>
-        </Box>
+        <Footer />
       </Container>
     </>
   );

@@ -6,6 +6,6 @@ import type { LinkProps } from "@mui/material/Link";
 
 export const Link = ({ href, ...props }: LinkProps & { href: string }) => (
   <NextLink href={href}>
-    <MuiLink {...props} />
+    <MuiLink href={href} {...props} />
   </NextLink>
 );
