@@ -3,6 +3,7 @@ import { Hero } from "../components/Hero";
 import { AllImages } from "../components/AllImages";
 
 import type { NextPage } from "next";
+import { Testimonials } from "../components/Testimonials";
 
 export const CatsApiPage: NextPage<Props> = ({ imagePaths }) => {
   return (
@@ -13,6 +14,9 @@ export const CatsApiPage: NextPage<Props> = ({ imagePaths }) => {
         </Section>
         <Section title="Images">
           <AllImages imagePaths={imagePaths} />
+        </Section>
+        <Section title="Testimonials">
+          <Testimonials />
         </Section>
       </Layout>
     </>
