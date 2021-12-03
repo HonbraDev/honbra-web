@@ -6,9 +6,10 @@ import {
   Typography,
   Breadcrumbs,
   Tooltip,
+  Box,
+  IconButton,
   useTheme,
 } from "@mui/material";
-import { Box } from "@mui/system";
 import { useRouter } from "next/router";
 import { Link } from "./Link";
 
@@ -17,14 +18,17 @@ export const Footer = () => {
   return (
     <Box sx={{ display: "flex", justifyContent: "center", mt: 6, gap: 4 }}>
       {socials.map(({ icon: Icon, href, tooltip }) => (
-        <Link key={href} href={href} target="_blank" rel="noreferrer">
+        <Link
+          key={href}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          tabIndex={-1}
+        >
           <Tooltip title={tooltip || ""} placement="top">
-            <Icon
-              sx={{
-                color: theme.palette.text.secondary,
-                fontSize: "2rem",
-              }}
-            />
+            <IconButton size="large">
+              <Icon />
+            </IconButton>
           </Tooltip>
         </Link>
       ))}

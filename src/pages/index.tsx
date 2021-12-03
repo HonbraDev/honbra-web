@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import { Link } from "../components/Link";
 import { Layout, Section } from "../components/Layout";
 import { Card, Box, Grid, Typography, Button } from "@mui/material";
 
@@ -30,10 +29,8 @@ const Home: NextPage<Props> = ({ projects }) => {
                   <Typography variant="h4">{project.title}</Typography>
                   <Typography variant="body1">{project.description}</Typography>
                   <Box sx={{ ml: "auto" }}>
-                    <Link href={project.link}>
-                      <a href={project.link}>
-                        <Button variant="outlined">Visit</Button>
-                      </a>
+                    <Link href={project.link} tabIndex={-1}>
+                      <Button variant="outlined">Visit</Button>
                     </Link>
                   </Box>
                 </Card>

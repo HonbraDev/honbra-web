@@ -54,7 +54,7 @@ const theme = createTheme({
     MuiButton: {
       defaultProps: {
         disableElevation: true,
-        disableRipple: true,
+        // disableRipple: true,
       },
     },
     MuiButtonBase: {
