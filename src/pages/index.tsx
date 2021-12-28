@@ -62,6 +62,12 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       description: "A simple grade calculator for my school",
       link: "/grades",
     },
+    {
+      title: "Bloat",
+      description:
+        "An optimized JavaScript file generator with a little too much cat",
+      link: "/bloat",
+    },
   ];
   return {
     props: {
