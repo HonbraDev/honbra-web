@@ -66,7 +66,7 @@ export const Layout = ({
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{title} - Honbra</title>
       </Head>
       <Container
         sx={{
