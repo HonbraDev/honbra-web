@@ -2,7 +2,7 @@ import PageMeta from "../../../types/PageMeta";
 
 const meta: PageMeta = {
   title: "Grade calculator",
-  route: "/grades",
+  route: "/grade-calculator",
   description: "A simple grade calculator for my school",
 };
 
