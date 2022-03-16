@@ -7,7 +7,12 @@ import type { NextPage, GetServerSideProps } from "next";
 const Error: NextPage<Props> = ({ statusCode }) => {
   return (
     <>
-      <Layout title={`Error${statusCode ? ` ${statusCode}` : ""}`}>
+      <Layout
+        meta={{
+          title: `Error${statusCode ? ` ${statusCode}` : ""}`,
+          route: "",
+        }}
+      >
         <Section>
           <Typography variant="body1">
             {statusCode
@@ -16,11 +21,13 @@ const Error: NextPage<Props> = ({ statusCode }) => {
                 : `An unexpected error occurred with the code ${statusCode}`
               : "An error has occured."}
           </Typography>
-          <Box mt={2}>
-            <Link href="/">
-              <Button variant="outlined">Go back to home page</Button>
-            </Link>
-          </Box>
+          {statusCode === 404 && (
+            <Box mt={2}>
+              <Link href="/">
+                <Button variant="outlined">Go home</Button>
+              </Link>
+            </Box>
+          )}
         </Section>
       </Layout>
     </>

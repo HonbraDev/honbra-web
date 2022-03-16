@@ -1,26 +1,28 @@
-import GradeCalculator from "../components/GradeCalculator";
+import meta from "../meta";
+import GradeCalculatorComponent from "../components/GradeCalculator";
 
 import { Layout, Section } from "../../../components/Layout";
 
 import type { NextPage } from "next";
 
-const Grades: NextPage<Props> = () => {
+const GradeCalculator: NextPage<Props> = () => {
   return (
     <>
-      <Layout title="Grades">
+      <Layout meta={meta}>
         <Section
           sx={{
             display: "flex",
             justifyContent: "center",
+            flexDirection: "row",
           }}
         >
-          <GradeCalculator />
+          <GradeCalculatorComponent />
         </Section>
       </Layout>
     </>
   );
 };
 
-export default Grades;
+export default GradeCalculator;
 
 export interface Props {}

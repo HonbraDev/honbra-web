@@ -1,11 +1,14 @@
+import meta from "../../modules/cat-api/meta";
+import CatApi from "../../modules/cat-api/pages/CatApi";
+
 import { GetStaticProps } from "next";
-import { CatsApiPage } from "../../modules/cats/pages/CatsPage";
 import { getImageNames } from "../../serverUtils";
-import { getImagePath } from "../../modules/cats/utils";
+import { getImagePath } from "../../modules/cat-api/utils";
 
-import type { Props } from "../../modules/cats/pages/CatsPage";
+import type { Props } from "../../modules/cat-api/pages/CatApi";
 
-export default CatsApiPage;
+export default CatApi;
+export { meta };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const imageNames = await getImageNames();
@@ -15,3 +18,4 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     },
   };
 };
+

@@ -1,4 +1,6 @@
 // I know the code is terrible, no need to remind me
+import meta from "../meta";
+
 import {
   Typography,
   Box,
@@ -29,7 +31,7 @@ const Bloat: NextPage = () => {
   };
 
   return (
-    <Layout title={pspsps ? "Pspspspspsps" : "Bloat"}>
+    <Layout meta={{ ...meta, title: pspsps ? "Pspspspspsps" : meta.title }}>
       <Section>
         <Typography variant="body1">
           {pspsps ? (

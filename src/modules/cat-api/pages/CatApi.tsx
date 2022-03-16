@@ -1,3 +1,5 @@
+import meta from "../meta";
+
 import { Layout, Section } from "../../../components/Layout";
 import { Hero } from "../components/Hero";
 import { AllImages } from "../components/AllImages";
@@ -5,12 +7,12 @@ import { Testimonials } from "../components/Testimonials";
 
 import type { NextPage } from "next";
 
-export const CatsApiPage: NextPage<Props> = ({ imagePaths }) => {
+const CatApi: NextPage<Props> = ({ imagePaths }) => {
   return (
     <>
-      <Layout title="Cat API">
+      <Layout meta={meta}>
         <Section>
-          <Hero endpoint="honbra.com/api/cats/random" imagePaths={imagePaths} />
+          <Hero endpoint="honbra.com/api/cat/random" imagePaths={imagePaths} />
         </Section>
         <Section title="Images">
           <AllImages imagePaths={imagePaths} />
@@ -22,6 +24,8 @@ export const CatsApiPage: NextPage<Props> = ({ imagePaths }) => {
     </>
   );
 };
+
+export default CatApi;
 
 export interface Props {
   imagePaths: string[];

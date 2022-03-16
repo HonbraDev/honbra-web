@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import { Link } from "./Link";
 
 import type { BoxProps } from "@mui/material";
+import type PageMeta from "../types/PageMeta";
 
 export const Footer = () => {
   return (
@@ -54,42 +55,36 @@ export const RouteBreadcrumb = ({
 );
 
 export const Layout = ({
-  title,
+  meta,
   children,
   disableFlex,
   wider,
-  description,
-  markdownTitle,
 }: {
+  meta: PageMeta;
   children: any;
-  title: string;
   disableFlex?: boolean;
   wider?: boolean;
-  description?: string;
-  markdownTitle?: string;
 }) => {
   const router = useRouter();
-  const ogImage = getOgImage(title, markdownTitle);
+  const ogImage = getOgImage(meta.title, meta.markdownTitle);
   const canonicalUrl = `https://honbra.com/${router.asPath}`;
-  const pageTitle = title === "Honbra" ? title : title + " - Honbra";
+  const pageTitle =
+    meta.title === "Honbra" ? meta.title : meta.title + " - Honbra";
   return (
     <>
       <Head>
         {/* Title & name */}
         <title>{pageTitle}</title>
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={meta.title} />
         <meta property="twitter:title" content={pageTitle} />
         <meta property="og:site_name" content="Honbra" />
 
         {/* Description */}
-        {description && (
+        {meta.description && (
           <>
-            <meta name="description" content={description} />
-            <meta property="og:description" content={description} />
-            <meta
-              property="twitter:description"
-              content="Your page description"
-            />
+            <meta name="description" content={meta.description} />
+            <meta property="og:description" content={meta.description} />
+            <meta property="twitter:description" content={meta.description} />
           </>
         )}
 
@@ -128,7 +123,7 @@ export const Layout = ({
             </Breadcrumbs>
           )}
           <Typography variant="h3" component="h1">
-            {title}
+            {meta.title}
           </Typography>
         </Box>
         {children}
@@ -167,6 +162,6 @@ export const Section = ({
 );
 
 export const getOgImage = (title: string, markdownTitle?: string) =>
-  `https://og-image-honbra.vercel.app/${encodeURIComponent(
+  `https://og-image.honbra.com/${encodeURIComponent(
     markdownTitle ? markdownTitle : `**${title}**`,
   )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fhonbra.com%2Fimg%2Flogo_light.png`;

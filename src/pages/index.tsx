@@ -1,36 +1,46 @@
-import { Link } from "../components/Link";
+import meta from "./meta";
+import projects from "../data/projects";
+import Link from "next/link";
+
 import { Layout, Section } from "../components/Layout";
-import { Card, Box, Grid, Typography, Button } from "@mui/material";
+import { Card, Box, Grid, Typography, Button, Tooltip } from "@mui/material";
 
-import type { NextPage, GetStaticProps } from "next";
+import type { NextPage } from "next";
 
-const Home: NextPage<Props> = ({ projects }) => {
+const Home: NextPage = () => {
   return (
     <>
-      <Layout title="Honbra">
+      <Layout meta={meta}>
         <Section>
           <Typography variant="body1">
             High school student from Czechia, enthusiastic about web development
-            with React and all things Linux.
+            with React and all things{" "}
+            <Tooltip title="I'd like to interject for a moment...">
+              <span>Linux</span>
+            </Tooltip>
+            .
           </Typography>
         </Section>
-        <Section title="My projects">
+        <Section title="My miniapps">
           <Grid container spacing={3}>
             {projects.map((project) => (
-              <Grid item xs={12} sm={6} md={4} key={project.link}>
+              <Grid item xs={12} sm={6} md={4} key={project.route}>
                 <Card
                   sx={{
                     display: "flex",
                     flexDirection: "column",
                     gap: 2,
                     p: 2,
+                    height: "100%",
                   }}
                 >
                   <Typography variant="h4">{project.title}</Typography>
                   <Typography variant="body1">{project.description}</Typography>
-                  <Box sx={{ ml: "auto" }}>
-                    <Link href={project.link} tabIndex={-1}>
-                      <Button variant="outlined" LinkComponent={"a"}>Visit</Button>
+                  <Box sx={{ ml: "auto", mt: "auto" }}>
+                    <Link href={project.route} passHref>
+                      <Button variant="outlined" LinkComponent={"a"}>
+                        Visit
+                      </Button>
                     </Link>
                   </Box>
                 </Card>
@@ -44,42 +54,3 @@ const Home: NextPage<Props> = ({ projects }) => {
 };
 
 export default Home;
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const projects = [
-    {
-      title: "Cat API",
-      description: "A simple API for fetching images of my cat",
-      link: "/cat",
-    },
-    {
-      title: "SafariPWD",
-      description: "A Safari-like password generator",
-      link: "/safaripwd",
-    },
-    {
-      title: "Grades",
-      description: "A simple grade calculator for my school",
-      link: "/grades",
-    },
-    {
-      title: "Bloat",
-      description:
-        "An optimized JavaScript file generator with a little too much cat",
-      link: "/bloat",
-    },
-  ];
-  return {
-    props: {
-      projects,
-    },
-  };
-};
-
-export interface Props {
-  projects: {
-    title: string;
-    description: string;
-    link: string;
-  }[];
-}

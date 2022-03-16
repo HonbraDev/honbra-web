@@ -1,19 +1,14 @@
+import meta from "../meta";
 import copy from "copy-to-clipboard";
 
-import {
-  Card,
-  Button,
-  TextField,
-  ButtonGroup,
-  Typography,
-} from "@mui/material";
+import { Card, Button, TextField, ButtonGroup } from "@mui/material";
 import { Layout, Section } from "../../../components/Layout";
 import { useState } from "react";
 import { generatePassword } from "../utils";
 
 import type { NextPage } from "next";
 
-const SafariPWD: NextPage<Props> = () => {
+const PasswordGenerator: NextPage<Props> = () => {
   const [password, setPassword] = useState(generatePassword());
 
   const copyPassword = () => copy(password);
@@ -21,7 +16,7 @@ const SafariPWD: NextPage<Props> = () => {
 
   return (
     <>
-      <Layout title="SafariPWD">
+      <Layout meta={meta}>
         <Section>
           <Card
             sx={{
@@ -33,7 +28,6 @@ const SafariPWD: NextPage<Props> = () => {
               mx: "auto",
             }}
           >
-            <Typography variant="h4">Password generator</Typography>
             <TextField inputProps={{ readOnly: true }} value={password} />
             <ButtonGroup sx={{ ml: "auto" }}>
               <Button onClick={regenerate}>Regenerate</Button>
@@ -48,6 +42,6 @@ const SafariPWD: NextPage<Props> = () => {
   );
 };
 
-export default SafariPWD;
+export default PasswordGenerator;
 
 export interface Props {}
