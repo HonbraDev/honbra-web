@@ -7,6 +7,7 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import initialTheme from "../data/theme";
 import createEmotionCache from "../utils/createEmotionCache";
 import { createTheme, useMediaQuery } from "@mui/material";
+import NextProgress from "next-progress";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -38,6 +39,13 @@ export default function MyApp(props: MyAppProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
+        <NextProgress
+          delay={300}
+          color={theme.palette.primary.main}
+          options={{
+            minimum: 0.3,
+          }}
+        />
         <Component {...pageProps} />
       </ThemeProvider>
     </CacheProvider>
