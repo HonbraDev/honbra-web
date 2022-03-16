@@ -94,6 +94,7 @@ export const Layout = ({
         )}
 
         {/* URL */}
+        <link rel="canonical" href={canonicalUrl} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="twitter:url" content={canonicalUrl} />
         <meta property="twitter:domain" content="honbra.com" />
