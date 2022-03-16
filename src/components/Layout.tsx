@@ -58,17 +58,53 @@ export const Layout = ({
   children,
   disableFlex,
   wider,
+  description,
+  markdownTitle,
 }: {
   children: any;
   title: string;
   disableFlex?: boolean;
   wider?: boolean;
+  description?: string;
+  markdownTitle?: string;
 }) => {
   const router = useRouter();
+  const ogImage = getOgImage(title, markdownTitle);
+  const canonicalUrl = `https://honbra.com/${router.asPath}`;
+  const pageTitle = title === "Honbra" ? title : title + " - Honbra";
   return (
     <>
       <Head>
-        <title>{title === "Honbra" ? title : title + " - Honbra"}</title>
+        {/* Title & name */}
+        <title>{pageTitle}</title>
+        <meta property="og:title" content={title} />
+        <meta property="twitter:title" content={pageTitle} />
+        <meta property="og:site_name" content="Honbra" />
+
+        {/* Description */}
+        {description && (
+          <>
+            <meta name="description" content={description} />
+            <meta property="og:description" content={description} />
+            <meta
+              property="twitter:description"
+              content="Your page description"
+            />
+          </>
+        )}
+
+        {/* URL */}
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="twitter:url" content={canonicalUrl} />
+        <meta property="twitter:domain" content="honbra.com" />
+
+        {/* Image */}
+        <meta property="og:image" content={ogImage} />
+        <meta property="twitter:image" content={ogImage} />
+        <meta property="twitter:card" content="summary_large_image" />
+
+        {/* Yup, it's a website */}
+        <meta property="og:type" content="website" />
       </Head>
       <Container
         sx={{
@@ -128,3 +164,8 @@ export const Section = ({
     {children}
   </Box>
 );
+
+export const getOgImage = (title: string, markdownTitle?: string) =>
+  `https://og-image-honbra.vercel.app/${encodeURIComponent(
+    markdownTitle ? markdownTitle : `**${title}**`,
+  )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fhonbra.com%2Fimg%2Flogo_light.png`;
