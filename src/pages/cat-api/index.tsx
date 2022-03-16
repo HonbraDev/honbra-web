@@ -2,7 +2,7 @@ import meta from "../../modules/cat-api/meta";
 import CatApi from "../../modules/cat-api/pages/CatApi";
 
 import { GetStaticProps } from "next";
-import { getImageNames } from "../../serverUtils";
+import { getImageNames } from "../../utils/serverUtils";
 import { getImagePath } from "../../modules/cat-api/utils";
 
 import type { Props } from "../../modules/cat-api/pages/CatApi";

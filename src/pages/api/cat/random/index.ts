@@ -1,7 +1,7 @@
 import fs from "fs";
 
 import { arrayRandom, getFsImagePath } from "../../../../modules/cat-api/utils";
-import { getImageNames } from "../../../../serverUtils";
+import { getImageNames } from "../../../../utils/serverUtils";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 

@@ -1,4 +1,4 @@
-import meta from "./meta";
+import meta from "../data/indexMeta";
 import projects from "../data/projects";
 import Link from "next/link";
 
