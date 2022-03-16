@@ -8,13 +8,13 @@ import {
   Tooltip,
   Box,
   IconButton,
-  useTheme,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import { Link } from "./Link";
 
+import type { BoxProps } from "@mui/material";
+
 export const Footer = () => {
-  const theme = useTheme();
   return (
     <Box sx={{ display: "flex", justifyContent: "center", mt: 6, gap: 4 }}>
       {socials.map(({ icon: Icon, href, tooltip }) => (
@@ -57,16 +57,18 @@ export const Layout = ({
   title,
   children,
   disableFlex,
+  wider,
 }: {
   children: any;
   title: string;
   disableFlex?: boolean;
+  wider?: boolean;
 }) => {
   const router = useRouter();
   return (
     <>
       <Head>
-        <title>{title} - Honbra</title>
+        <title>{title === "Honbra" ? title : title + " - Honbra"}</title>
       </Head>
       <Container
         sx={{
@@ -79,7 +81,7 @@ export const Layout = ({
                 gap: 6,
               }),
         }}
-        maxWidth="md"
+        maxWidth={wider ? undefined : "md"}
       >
         <Box>
           {router.route !== "/" && (
@@ -103,10 +105,12 @@ export const Section = ({
   title,
   disableFlex,
   children,
+  sx,
 }: {
   title?: string;
   disableFlex?: boolean;
   children: any;
+  sx?: BoxProps["sx"];
 }) => (
   <Box
     sx={{
@@ -117,6 +121,7 @@ export const Section = ({
             flexDirection: "column",
             gap: 4,
           }),
+      ...sx,
     }}
   >
     {title && <Typography variant="h4">{title}</Typography>}

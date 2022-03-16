@@ -1,6 +1,6 @@
 import fs from "fs";
 
-import { arrayRandom, getFsImagePath } from "../../../../modules/cats/catUtils";
+import { arrayRandom, getFsImagePath } from "../../../../modules/cats/utils";
 import { getImageNames } from "../../../../serverUtils";
 
 import type { NextApiRequest, NextApiResponse } from "next";

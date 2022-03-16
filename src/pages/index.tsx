@@ -30,7 +30,7 @@ const Home: NextPage<Props> = ({ projects }) => {
                   <Typography variant="body1">{project.description}</Typography>
                   <Box sx={{ ml: "auto" }}>
                     <Link href={project.link} tabIndex={-1}>
-                      <Button variant="outlined">Visit</Button>
+                      <Button variant="outlined" LinkComponent={"a"}>Visit</Button>
                     </Link>
                   </Box>
                 </Card>

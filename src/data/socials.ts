@@ -1,4 +1,4 @@
-import { GitHub, Email, Telegram } from "@mui/icons-material";
+import { GitHub, Email, Telegram, Chat } from "@mui/icons-material";
 
 const socials = [
   {
@@ -8,14 +8,19 @@ const socials = [
   },
   {
     icon: Email,
-    href: "mailto:honbra@honbra.com",
-    tooltip: "Email",
+    href: "mailto:replacewith_honbra_oryouareaspammer@honbra.com",
+    tooltip: "Email (read instructions)",
   },
   {
     icon: Telegram,
     href: "https://t.me/honbra",
     tooltip: "Telegram",
   },
+  {
+    icon: Chat,
+    href: "https://matrix.to/#/@honbra:honbra.com",
+    tooltip: "Matrix"
+  }
 ];
 
 export default socials;

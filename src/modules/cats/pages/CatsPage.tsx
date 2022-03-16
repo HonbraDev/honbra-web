@@ -1,9 +1,9 @@
 import { Layout, Section } from "../../../components/Layout";
 import { Hero } from "../components/Hero";
 import { AllImages } from "../components/AllImages";
+import { Testimonials } from "../components/Testimonials";
 
 import type { NextPage } from "next";
-import { Testimonials } from "../components/Testimonials";
 
 export const CatsApiPage: NextPage<Props> = ({ imagePaths }) => {
   return (

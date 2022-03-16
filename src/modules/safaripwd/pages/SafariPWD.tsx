@@ -9,9 +9,9 @@ import {
 } from "@mui/material";
 import { Layout, Section } from "../../../components/Layout";
 import { useState } from "react";
+import { generatePassword } from "../utils";
 
 import type { NextPage } from "next";
-import { generatePassword } from "../generatePassword";
 
 const SafariPWD: NextPage<Props> = () => {
   const [password, setPassword] = useState(generatePassword());

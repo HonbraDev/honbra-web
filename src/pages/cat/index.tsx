@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { CatsApiPage } from "../../modules/cats/pages/CatsPage";
 import { getImageNames } from "../../serverUtils";
-import { getImagePath } from "../../modules/cats/catUtils";
+import { getImagePath } from "../../modules/cats/utils";
 
 import type { Props } from "../../modules/cats/pages/CatsPage";
 

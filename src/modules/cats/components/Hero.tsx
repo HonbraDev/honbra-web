@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { Link } from "../../../components/Link";
-import { arrayRandom } from "../catUtils";
+import { arrayRandom } from "../utils";
 
 export const Hero = ({
   imagePaths,
