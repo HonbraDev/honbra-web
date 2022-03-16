@@ -4,6 +4,7 @@ const meta: PageMeta = {
   title: "Cat API",
   route: "/cat",
   description: "A simple API for fetching images of my cat",
+  ogImage: "https://honbra.com/img/catto.png"
 };
 
 export default meta;

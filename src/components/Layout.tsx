@@ -66,7 +66,7 @@ export const Layout = ({
   wider?: boolean;
 }) => {
   const router = useRouter();
-  const ogImage = getOgImage(meta.title, meta.markdownTitle);
+  const ogImage = getOgImage(meta.title, meta.markdownTitle, meta.ogImage);
   const canonicalUrl = `https://honbra.com/${router.asPath}`;
   const pageTitle =
     meta.title === "Honbra" ? meta.title : meta.title + " - Honbra";
@@ -101,6 +101,9 @@ export const Layout = ({
 
         {/* Yup, it's a website */}
         <meta property="og:type" content="website" />
+
+        {/* Color~s~ in Discord! */}
+        <meta name="theme-color" content="#1E90FF" />
       </Head>
       <Container
         sx={{
@@ -161,7 +164,13 @@ export const Section = ({
   </Box>
 );
 
-export const getOgImage = (title: string, markdownTitle?: string) =>
+export const getOgImage = (
+  title: string,
+  markdownTitle?: string,
+  ogImage?: string,
+) =>
   `https://og-image.honbra.com/${encodeURIComponent(
     markdownTitle ? markdownTitle : `**${title}**`,
-  )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fhonbra.com%2Fimg%2Flogo_light.png`;
+  )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fhonbra.com%2Fimg%2Flogo_light.png${
+    ogImage ? `&images=${encodeURIComponent(ogImage)}` : ""
+  }`;
