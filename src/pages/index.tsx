@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Layout meta={meta}>
-        <Section>
+        <Section title="About me">
           <Typography variant="body1">
             High school student from Czechia, enthusiastic about web development
             with React and all things{" "}
