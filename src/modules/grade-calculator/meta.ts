@@ -1,4 +1,4 @@
-import PageMeta from "../../../types/PageMeta";
+import PageMeta from "../../types/PageMeta";
 
 const meta: PageMeta = {
   title: "Grade calculator",

@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { manifestation } from "@duxcore/manifestation";
-import { getImageNames } from "../../../utils/serverUtils";
+import { NextApiRequest, NextApiResponse } from "next";
 import { getImagePath } from "../../../modules/cat-api/utils";
+import { getImageNames } from "../../../utils/serverUtils";
 
 export default async function handler(
   req: NextApiRequest,

@@ -1,4 +1,4 @@
-import { Card, Typography, Box } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 
 export interface TestimonialProps {
   text: string;

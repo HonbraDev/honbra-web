@@ -2,17 +2,17 @@
 import meta from "../meta";
 
 import {
-  Typography,
   Box,
-  Slider,
   Button,
   Container,
-  FormGroup,
   FormControlLabel,
+  FormGroup,
+  Slider,
   Switch,
+  Typography,
 } from "@mui/material";
-import { Layout, Section } from "../../../components/Layout";
 import { useState } from "react";
+import { Layout, Section } from "../../../components/Layout";
 
 import type { NextPage } from "next";
 

@@ -1,8 +1,8 @@
 import meta from "../meta";
 
 import { Layout, Section } from "../../../components/Layout";
-import { Hero } from "../components/Hero";
 import { AllImages } from "../components/AllImages";
+import { Hero } from "../components/Hero";
 import { Testimonials } from "../components/Testimonials";
 
 import type { NextPage } from "next";

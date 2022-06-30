@@ -2,12 +2,12 @@ import Head from "next/head";
 import socials from "../data/socials";
 
 import {
-  Container,
-  Typography,
-  Breadcrumbs,
-  Tooltip,
   Box,
+  Breadcrumbs,
+  Container,
   IconButton,
+  Tooltip,
+  Typography,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import { Link } from "./Link";
@@ -16,9 +16,11 @@ import type { BoxProps } from "@mui/material";
 import type PageMeta from "../types/PageMeta";
 
 export const Footer = () => {
+  const router = useRouter();
+
   return (
     <Box sx={{ display: "flex", justifyContent: "center", mt: 6, gap: 4 }}>
-      {socials.map(({ icon: Icon, href, tooltip }) => (
+      {router.route == "/" && socials.map(({ icon: Icon, href, tooltip }) => (
         <Link
           key={href}
           href={href}

@@ -1,9 +1,9 @@
-import meta from "../meta";
 import copy from "copy-to-clipboard";
+import meta from "../meta";
 
-import { Card, Button, TextField, ButtonGroup } from "@mui/material";
-import { Layout, Section } from "../../../components/Layout";
+import { Button, ButtonGroup, Card, TextField } from "@mui/material";
 import { useState } from "react";
+import { Layout, Section } from "../../../components/Layout";
 import { generatePassword } from "../utils";
 
 import type { NextPage } from "next";

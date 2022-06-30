@@ -1,5 +1,5 @@
+import GradeCalculatorComponent from "../GradeCalculator";
 import meta from "../meta";
-import GradeCalculatorComponent from "../components/GradeCalculator";
 
 import { Layout, Section } from "../../../components/Layout";
 

@@ -1,4 +1,4 @@
-import { GitHub, Email, Telegram, Chat } from "@mui/icons-material";
+import { Chat, Email, GitHub, Telegram } from "@mui/icons-material";
 
 const socials = [
   {

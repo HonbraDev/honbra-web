@@ -1,6 +1,6 @@
-import { Link } from "../../../components/Link";
 import { Box, Button, Grid } from "@mui/material";
 import { useState } from "react";
+import { Link } from "../../../components/Link";
 
 export const AllImages = ({
   imagePaths,

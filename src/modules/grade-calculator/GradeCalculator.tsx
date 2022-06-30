@@ -1,6 +1,6 @@
-import { Card, Slider, Typography, Grid } from "@mui/material";
+import { Card, Grid, Slider, Typography } from "@mui/material";
 import { useState } from "react";
-import { getLabel } from "../utils";
+import { getLabel } from "./utils";
 
 const GradeCalculator = () => {
   const [points, setPoints] = useState(75);
