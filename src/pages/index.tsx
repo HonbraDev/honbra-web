@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       <Layout meta={meta}>
         <Section title="About me">
           <Typography variant="body1">
-            High school student from Czechia, enthusiastic about web development
+            A student from Czechia, enthusiastic about web development
             with React and all things{" "}
             <Tooltip title="I'd like to interject for a moment...">
               <span>Linux</span>
